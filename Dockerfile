@@ -10,9 +10,11 @@ RUN apt install -y meshlab
 RUN cd /root ; mkdir check-opencv-python
 RUN cd /root/check-opencv-python
 WORKDIR /root/check-opencv-python
+RUN mkdir -p check-opencv-python/check_opencv_python
 COPY *.py ./
+COPY check_opencv_python/*.py check_opencv_python/
 COPY pyproject.toml ./
 
 WORKDIR /root/check-opencv-python
 
-RUN python3 -m pip install .[dev]
+RUN python3 -m pip install .
