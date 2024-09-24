@@ -13,11 +13,15 @@ def get_versions_in_pypi():
         body = res.read()
 
     # print(body)
+    body = body
     lines = body.splitlines()
-    print(lines)
+    # print(lines)
     links = []
     for line in lines:
-        if line.find(b"<link>") > -1 and line.find(b"</link>") > -1:
-            links.append(line)
+        line = line.decode()
+        if line.find("<link>") > -1 and line.find("</link>") > -1:
+            value = line.replace("<link>", "").replace("</link>", "").strip()
+            links.append(value)
+    links = sorted(links)
     pprint(links)
 get_versions_in_pypi()
