@@ -11,7 +11,6 @@ RUN cd /root ; mkdir check-opencv-python
 RUN cd /root/check-opencv-python
 WORKDIR /root/check-opencv-python
 COPY *.py ./
-RUN python3 -m pip install gdown
 COPY pyproject.toml ./
 
 WORKDIR /root/check-opencv-python

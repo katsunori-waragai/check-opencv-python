@@ -3,7 +3,7 @@ requires = ["setuptools", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "check-opencv-python"
+name = "check_opencv_python"
 description = "checker for opencv-python"
 readme = "README.md"
 version = "0.0.1"
@@ -29,7 +29,7 @@ dev = [
 Repository = "https://github.com/katsunori-waragai/check-opencv-python"
 
 [tool.setuptools]
-packages = ["check-opencv-python"]
+packages = ["check_opencv_python"]
 
 [tool.black]
 line-length = 120
