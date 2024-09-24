@@ -12,13 +12,9 @@ def get_versions_in_pypi():
     with urllib.request.urlopen(req) as res:
         body = res.read()
 
-    # print(body)
-    body = body
-    lines = body.splitlines()
-    # print(lines)
+    lines = body.decode().splitlines()
     links = []
     for line in lines:
-        line = line.decode()
         if line.find("<link>") > -1 and line.find("</link>") > -1:
             value = line.replace("<link>", "").replace("</link>", "").strip()
             links.append(value)
